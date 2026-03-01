@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/api/places/(.*)",
+            "destination": "https://places.googleapis.com/$1"
+        }
+    ]
+}

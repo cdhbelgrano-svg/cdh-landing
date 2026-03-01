@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cdh-black: #000000;
+  --color-cdh-orange: #d98452;
+  /* Updated primary vintage orange */
+  --color-cdh-gold: #c37042;
+  /* Harmonized darker orange/gold */
+  --color-cdh-deepwood: #5F2E20;
+  --color-cdh-darkwood: #402722;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
+
+@layer base {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    overflow-x: hidden;
+    background-color: #000000;
+    width: 100%;
+    /* Modern way to prevent scrollbar flicker issues */
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #000000;
+    color: white;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Force hardware acceleration but without jitter-causing properties */
+  section,
+  main {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    color: white;
+  }
+}
+
+/* Custom premium scrollbar - Solid design to prevent rendering sub-pixel artifacts */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  /* Solid black to match the page background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #402722;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #F26513;
+}
+
+/* Global Dark Mode Autofill Fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #000000 inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
