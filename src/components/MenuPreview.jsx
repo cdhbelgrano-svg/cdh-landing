@@ -76,8 +76,7 @@ const MenuPreview = () => {
                                 <img
                                     src={burger.img}
                                     alt={burger.name}
-                                    loading="lazy"
-                                    decoding="async"
+                                    loading="eager"
                                     className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-1000 opacity-95 group-hover:opacity-100 uppercase"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent opacity-20"></div>

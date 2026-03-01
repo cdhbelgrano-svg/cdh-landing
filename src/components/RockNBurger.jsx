@@ -84,8 +84,7 @@ const RockNBurger = () => {
                         <img
                             src={item.url}
                             alt={`Rock photo ${item.id}`}
-                            loading="lazy"
-                            decoding="async"
+                            loading="eager"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                             onError={(e) => {
                                 e.target.src = "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=400&auto=format&fit=crop";
