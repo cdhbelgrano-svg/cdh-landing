@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Send, FileText, CheckCircle, AlertCircle } from 'lucide-react';
+import { Briefcase, Send, FileText, CheckCircle, AlertCircle, User, Calendar, Phone, Mail, MessageSquare } from 'lucide-react';
 
 const Jobs = () => {
     const [status, setStatus] = useState(null); // 'sending', 'success', 'error'
@@ -96,121 +96,120 @@ const Jobs = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                    <div className="bg-[#111] p-8 md:p-10 rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden w-full">
+                    <div className="bg-[#111] p-6 md:p-8 rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden w-full max-w-lg mx-auto lg:ml-auto">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-cdh-orange rounded-full mix-blend-screen filter blur-[80px] opacity-20"></div>
 
                         <form
                             onSubmit={handleSubmit}
                             action="https://forminit.com/f/nuvtjaoigzj"
                             method="POST"
-                            className="relative z-10"
+                            className="relative z-10 flex flex-col gap-3"
                         >
                             <input type="hidden" name="_subject" value="Nueva Postulación desde la Web CDH" />
 
-                            {/* Row 1: Name (Full) */}
-                            <div className="mb-3">
-                                <label className="block text-[10px] uppercase tracking-wider text-gray-500 mb-1 font-bold">Nombre Completo *</label>
-                                <input name="fi-sender-fullName" required type="text" className="w-full px-3 py-2 rounded-lg bg-black border border-white/10 text-white focus:outline-none focus:border-cdh-orange transition-colors text-xs" placeholder="Tu nombre" />
+                            {/* Row 1: Name */}
+                            <div className="relative">
+                                <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 w-[18px] h-[18px] pointer-events-none" />
+                                <input name="fi-sender-fullName" required type="text" className="w-full pl-11 pr-4 py-3 rounded-full bg-[#111] border border-cdh-darkwood text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cdh-gold focus:ring-1 focus:ring-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]" placeholder="Nombre Completo *" />
                             </div>
 
-                            {/* Row 2: Date (4) + Phone (8) */}
-                            <div className="grid grid-cols-12 gap-3 mb-3">
-                                <div className="col-span-12 md:col-span-4">
-                                    <label className="block text-[10px] uppercase tracking-wider text-gray-500 mb-1 font-bold">Fecha Nac. *</label>
-                                    <input name="fi-date-nacimiento" required type="date" className="w-full px-3 py-2 rounded-lg bg-black border border-white/10 text-white focus:outline-none focus:border-cdh-orange transition-colors text-xs h-[38px]" />
+                            {/* Row 2: Date + Phone */}
+                            <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
+                                <div className="relative flex items-center md:col-span-5">
+                                    <Calendar className="absolute left-4 text-gray-500 w-[18px] h-[18px] pointer-events-none z-10" />
+                                    <input name="fi-date-nacimiento" required type="text" onFocus={(e) => (e.target.type = "date")} onBlur={(e) => { if (!e.target.value) e.target.type = "text" }} className="w-full pl-11 pr-4 py-3 rounded-full bg-[#111] border border-cdh-darkwood text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cdh-gold focus:ring-1 focus:ring-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)] appearance-none" placeholder="Fecha Nacimiento *" />
                                 </div>
-                                <div className="col-span-12 md:col-span-8">
-                                    <label className="block text-[10px] uppercase tracking-wider text-gray-500 mb-1 font-bold">Teléfono *</label>
-                                    <div className="flex gap-1 h-[38px]">
-                                        <select
-                                            name="fi-sender-phone-prefix"
-                                            className="w-[80px] h-full px-2 rounded-lg bg-black border border-white/10 text-white focus:outline-none focus:border-cdh-orange transition-colors text-[10px] font-bold cursor-pointer appearance-none"
-                                        >
-                                            <option value="+54">🇦🇷 +54</option>
-                                            <option value="+598">🇺🇾 +598</option>
-                                            <option value="+56">🇨🇱 +56</option>
-                                            <option value="+55">🇧🇷 +55</option>
-                                            <option value="+591">🇧🇴 +591</option>
-                                            <option value="+595">🇵🇾 +595</option>
-                                            <option value="+1">🇺🇸 +1</option>
-                                            <option value="+34">🇪🇸 +34</option>
-                                        </select>
+                                <div className="flex gap-2 md:col-span-7">
+                                    <select
+                                        name="fi-sender-phone-prefix"
+                                        className="w-[90px] px-2 py-3 rounded-full bg-[#111] border border-cdh-darkwood text-white text-sm focus:outline-none focus:border-cdh-gold focus:ring-1 focus:ring-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)] cursor-pointer appearance-none text-center shrink-0"
+                                    >
+                                        <option value="+54">🇦🇷 +54</option>
+                                        <option value="+598">🇺🇾 +598</option>
+                                        <option value="+56">🇨🇱 +56</option>
+                                        <option value="+55">🇧🇷 +55</option>
+                                        <option value="+591">🇧🇴 +591</option>
+                                        <option value="+595">🇵🇾 +595</option>
+                                        <option value="+1">🇺🇸 +1</option>
+                                        <option value="+34">🇪🇸 +34</option>
+                                    </select>
+                                    <div className="relative flex-1 min-w-0">
+                                        <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 w-[18px] h-[18px] pointer-events-none" />
                                         <input
                                             name="fi-sender-phone-local"
                                             required
                                             type="tel"
-                                            pattern="[0-9]{10,15}"
-                                            className="flex-1 h-full px-3 rounded-lg bg-black border border-white/10 text-white focus:outline-none focus:border-cdh-orange transition-colors text-xs"
-                                            placeholder="Número local"
+                                            pattern="[0-9]{8,15}"
+                                            className="w-full pl-11 pr-4 py-3 rounded-full bg-[#111] border border-cdh-darkwood text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cdh-gold focus:ring-1 focus:ring-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]"
+                                            placeholder="Tu número *"
                                             title="Tu número sin el prefijo país"
                                         />
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Row 3: Email (8) + Puesto (4) */}
-                            <div className="grid grid-cols-12 gap-3 mb-3">
-                                <div className="col-span-12 md:col-span-8">
-                                    <label className="block text-[10px] uppercase tracking-wider text-gray-500 mb-1 font-bold">Email *</label>
-                                    <input name="fi-sender-email" required type="email" className="w-full px-3 py-2 rounded-lg bg-black border border-white/10 text-white focus:outline-none focus:border-cdh-orange transition-colors text-xs h-[38px]" placeholder="tu@email.com" />
+                            {/* Row 3: Email + Puesto */}
+                            <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
+                                <div className="relative md:col-span-7">
+                                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 w-[18px] h-[18px] pointer-events-none" />
+                                    <input name="fi-sender-email" required type="email" className="w-full pl-11 pr-4 py-3 rounded-full bg-[#111] border border-cdh-darkwood text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cdh-gold focus:ring-1 focus:ring-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]" placeholder="tu@email.com *" />
                                 </div>
-                                <div className="col-span-12 md:col-span-4">
-                                    <label className="block text-[10px] uppercase tracking-wider text-gray-500 mb-1 font-bold">Puesto *</label>
-                                    <select name="fi-select-puesto" className="w-full px-3 py-2 rounded-lg bg-black border border-white/10 text-white focus:outline-none focus:border-cdh-orange transition-colors appearance-none text-xs cursor-pointer h-[38px]">
-                                        <option>Cocinero / Ayudante</option>
-                                        <option>Atención / Caja</option>
-                                        <option>Encargado</option>
+                                <div className="relative flex items-center md:col-span-5">
+                                    <Briefcase className="absolute left-4 text-gray-500 w-[18px] h-[18px] pointer-events-none z-10" />
+                                    <select name="fi-select-puesto" defaultValue="" className="w-full pl-11 pr-4 py-3 rounded-full bg-[#111] border border-cdh-darkwood text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cdh-gold focus:ring-1 focus:ring-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)] appearance-none cursor-pointer">
+                                        <option value="" disabled hidden>Puesto deseado *</option>
+                                        <option value="Cocinero / Ayudante">Cocinero / Ayudante</option>
+                                        <option value="Atención / Caja">Atención / Caja</option>
+                                        <option value="Encargado">Encargado</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <div className="mb-3">
-                                <label className="block text-[10px] uppercase tracking-wider text-gray-500 mb-1 font-bold">Mensaje (Opcional)</label>
-                                <textarea name="fi-text-mensaje" rows="2" className="w-full px-3 py-2 rounded-lg bg-black border border-white/10 text-white focus:outline-none focus:border-cdh-orange transition-colors resize-none text-xs" placeholder="Breve presentación..."></textarea>
+                            {/* Row 4: Mensaje */}
+                            <div className="relative">
+                                <MessageSquare className="absolute left-4 top-4 text-gray-500 w-[18px] h-[18px] pointer-events-none" />
+                                <textarea name="fi-text-mensaje" rows="2" className="w-full pl-11 pr-4 py-3 rounded-3xl bg-[#111] border border-cdh-darkwood text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cdh-gold focus:ring-1 focus:ring-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)] resize-none" placeholder="Breve presentación (Opcional)"></textarea>
                             </div>
 
-                            <div className="mb-4">
-                                <label className="block text-[10px] uppercase tracking-wider text-gray-500 mb-1 font-bold">CV (PDF, máx 5MB) *</label>
-                                <div className="relative">
-                                    <input
-                                        name="fi-file-cv"
-                                        required
-                                        type="file"
-                                        accept=".pdf"
-                                        onChange={handleFileChange}
-                                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
-                                    />
-                                    <div className="w-full px-3 py-2 rounded-lg bg-black border border-dashed border-white/20 text-gray-400 flex items-center justify-between group-hover:border-cdh-orange transition-colors">
-                                        <div className="flex items-center gap-2 overflow-hidden">
-                                            <FileText className="w-3.5 h-3.5 shrink-0 text-cdh-orange" />
-                                            <span className="text-[10px] truncate">{fileName || "Elegir PDF..."}</span>
-                                        </div>
-                                        <span className="text-[9px] font-bold bg-white/5 px-2 py-0.5 rounded uppercase">Subir</span>
+                            {/* Row 5: CV */}
+                            <div className="relative">
+                                <input
+                                    name="fi-file-cv"
+                                    required
+                                    type="file"
+                                    accept=".pdf"
+                                    onChange={handleFileChange}
+                                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
+                                    title="Sube tu CV en PDF"
+                                />
+                                <div className="w-full pl-11 pr-4 py-3 rounded-full bg-[#111] border border-dashed border-cdh-darkwood text-gray-400 flex items-center justify-between group-hover:border-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)] cursor-pointer">
+                                    <div className="flex items-center gap-2 overflow-hidden">
+                                        <FileText className="absolute left-4 top-1/2 -translate-y-1/2 text-cdh-gold w-[18px] h-[18px] pointer-events-none" />
+                                        <span className="truncate text-sm">{fileName || "Subir CV (PDF, máx 5MB) *"}</span>
                                     </div>
+                                    <span className="text-[10px] font-bold text-black bg-cdh-gold px-3 py-1 rounded-full uppercase">Explorar</span>
                                 </div>
                             </div>
 
+                            {/* Submit Button */}
                             <button
                                 type="submit"
                                 disabled={status === 'sending'}
-                                className={`w-full group relative flex items-center justify-center gap-2 px-6 py-2.5 font-bold text-white rounded-lg transition-all shadow-xl
-                                    ${status === 'success' ? 'bg-green-600' :
-                                        status === 'error' ? 'bg-red-600' :
-                                            'bg-cdh-orange hover:bg-cdh-orange/90 active:scale-95'}`}
+                                className="group relative inline-flex items-center justify-center w-full px-8 py-3.5 mt-1 font-bold text-black bg-cdh-gold overflow-hidden rounded-full transition-all hover:scale-[1.02] disabled:opacity-80 disabled:hover:scale-100 shadow-xl"
                             >
                                 {status === 'sending' ? (
-                                    <span className="animate-pulse text-xs uppercase tracking-widest">Enviando...</span>
+                                    <span className="flex items-center gap-2 text-sm uppercase tracking-wide">Enviando...</span>
                                 ) : status === 'success' ? (
-                                    <><CheckCircle className="w-4 h-4" /> <span className="text-xs uppercase">¡Enviado!</span></>
+                                    <span className="flex items-center gap-2 text-sm uppercase tracking-wide"><CheckCircle className="w-[18px] h-[18px]" /> ¡Postulación Enviada!</span>
                                 ) : status === 'error' ? (
-                                    <><AlertCircle className="w-4 h-4" /> <span className="text-xs uppercase">Error. Reintentar</span></>
+                                    <span className="flex items-center gap-2 text-sm uppercase tracking-wide text-red-900"><AlertCircle className="w-[18px] h-[18px]" /> Error. Reintentar</span>
                                 ) : (
-                                    <><span className="text-xs uppercase tracking-widest">Enviar Postulación</span> <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></>
+                                    <span className="flex items-center gap-2 text-sm uppercase tracking-wide">Enviar <Send className="w-[18px] h-[18px] group-hover:translate-x-1 transition-transform" /></span>
                                 )}
                             </button>
 
                             {status === 'success' && (
-                                <p className="text-center text-green-500 text-[9px] mt-2 font-medium uppercase tracking-tighter">
+                                <p className="text-center text-green-500 text-xs mt-1 font-medium tracking-wide">
                                     Revisá tu mail para confirmar si es tu primer envío.
                                 </p>
                             )}
