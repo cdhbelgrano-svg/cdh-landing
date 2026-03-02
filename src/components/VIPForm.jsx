@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, CheckCircle, User, Loader2 } from 'lucide-react';
+import { MessageCircle, CheckCircle, User, Loader2, Mail } from 'lucide-react';
 
 const VIPForm = () => {
-    const [formData, setFormData] = useState({ firstName: '', lastName: '', phonePrefix: '+54', phoneLocal: '' });
+    const [formData, setFormData] = useState({ firstName: '', lastName: '', phonePrefix: '+54', phoneLocal: '', email: '' });
     const [status, setStatus] = useState('idle'); // idle | submitting | success | error
 
     const handleChange = (e) => {
@@ -14,7 +14,7 @@ const VIPForm = () => {
         e.preventDefault();
 
         // Validación explícita de campos obligatorios
-        if (!formData.firstName.trim() || !formData.lastName.trim() || !formData.phoneLocal.trim()) {
+        if (!formData.firstName.trim() || !formData.lastName.trim() || !formData.phoneLocal.trim() || !formData.email.trim()) {
             setStatus('error');
             setTimeout(() => setStatus('idle'), 3000);
             return;
@@ -33,7 +33,8 @@ const VIPForm = () => {
         const payload = {
             firstName: formData.firstName,
             lastName: formData.lastName,
-            phone: finalPhone
+            phone: finalPhone,
+            email: formData.email
         };
 
         try {
@@ -57,13 +58,14 @@ const VIPForm = () => {
                 
 *NUEVO CONTACTO VIP:*
 👤 Nombre: ${formData.firstName} ${formData.lastName}
+📧 Email: ${formData.email}
 🎟️ Código: ${triggerWord}`;
 
                 const encodedMessage = encodeURIComponent(waMessage);
 
                 setTimeout(() => {
                     window.open(`https://wa.me/${waPhone}?text=${encodedMessage}`, '_blank');
-                    setFormData({ firstName: '', lastName: '', phonePrefix: '+54', phoneLocal: '' });
+                    setFormData({ firstName: '', lastName: '', phonePrefix: '+54', phoneLocal: '', email: '' });
                     setStatus('idle');
                 }, 1500); // Pequeña pausa para que vean el "¡Cupón en camino!"
 
@@ -159,6 +161,19 @@ const VIPForm = () => {
                                 title="Ingresa tu número sin el prefijo de país"
                             />
                         </div>
+                    </div>
+
+                    <div className="relative">
+                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 w-5 h-5 pointer-events-none" />
+                        <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="Email *"
+                            required
+                            className="w-full pl-12 pr-4 py-4 rounded-full bg-[#111] border border-cdh-darkwood text-white placeholder-gray-500 focus:outline-none focus:border-cdh-gold focus:ring-1 focus:ring-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]"
+                        />
                     </div>
 
                     <button
