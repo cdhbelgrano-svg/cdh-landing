@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Car, WheatOff, Clock, Map as MapIcon, Phone, Mail, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
+import { MapPin, Car, WheatOff, Clock, Map as MapIcon, Phone, Mail, ExternalLink, ChevronDown, ChevronUp, ShoppingBag } from 'lucide-react';
+import pedidosYaIco from '../assets/ico/pedidosya.ico';
+import rappiIco from '../assets/ico/Rappi.ico';
 
 const FAQ = () => {
     const [placeData, setPlaceData] = useState({
@@ -181,29 +183,68 @@ const FAQ = () => {
                             </div>
                         </div>
 
-                        {/* Contacto (Nuevo Diseño Sin WhatsApp) */}
-                        <div className="flex flex-col gap-4 mt-4">
-                            <h4 className="text-3xl font-black text-white uppercase tracking-tight">Contacto</h4>
-                            <div className="flex flex-col gap-5 mt-2">
-                                <a href={`tel:${placeData.phone.replace(/\s+/g, '')}`} className="flex items-center gap-4 group cursor-pointer w-fit">
-                                    <div className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center group-hover:bg-cdh-orange/10 group-hover:border-cdh-orange transition-all duration-300 shadow-xl">
-                                        <Phone className="w-5 h-5 text-cdh-orange group-hover:scale-110 transition-transform" />
-                                    </div>
-                                    <div>
-                                        <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-0.5">Llamadas</p>
-                                        <p className="text-white text-xl tracking-wide font-medium group-hover:text-cdh-orange transition-colors">{placeData.phone}</p>
-                                    </div>
-                                </a>
+                        {/* ROW: Contacto y Apps */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-4">
+                            {/* Columna Contacto */}
+                            <div className="flex flex-col gap-4">
+                                <h4 className="text-3xl font-black text-white uppercase tracking-tight">Contacto</h4>
+                                <div className="flex flex-col gap-5 mt-2">
+                                    <a href={`tel:${placeData.phone.replace(/\s+/g, '')}`} className="flex items-center gap-4 group cursor-pointer w-fit">
+                                        <div className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center group-hover:bg-cdh-orange/10 group-hover:border-cdh-orange transition-all duration-300 shadow-xl">
+                                            <Phone className="w-5 h-5 text-cdh-orange group-hover:scale-110 transition-transform" />
+                                        </div>
+                                        <div>
+                                            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-0.5">Llamadas</p>
+                                            <p className="text-white text-xl tracking-wide font-medium group-hover:text-cdh-orange transition-colors">{placeData.phone}</p>
+                                        </div>
+                                    </a>
 
-                                <a href="mailto:cdhbelgrano@gmail.com" className="flex items-center gap-4 group cursor-pointer w-fit">
-                                    <div className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center group-hover:bg-cdh-gold/10 group-hover:border-cdh-gold transition-all duration-300 shadow-xl">
-                                        <Mail className="w-5 h-5 text-cdh-gold group-hover:scale-110 transition-transform" />
-                                    </div>
-                                    <div>
-                                        <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-0.5">Email</p>
-                                        <p className="text-white text-base font-medium group-hover:text-cdh-gold transition-colors">cdhbelgrano@gmail.com</p>
-                                    </div>
-                                </a>
+                                    <a href="mailto:cdhbelgrano@gmail.com" className="flex items-center gap-4 group cursor-pointer w-fit">
+                                        <div className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center group-hover:bg-cdh-gold/10 group-hover:border-cdh-gold transition-all duration-300 shadow-xl">
+                                            <Mail className="w-5 h-5 text-cdh-gold group-hover:scale-110 transition-transform" />
+                                        </div>
+                                        <div>
+                                            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-0.5">Email</p>
+                                            <p className="text-white text-base font-medium group-hover:text-cdh-gold transition-colors">cdhbelgrano@gmail.com</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Columna APPS */}
+                            <div className="flex flex-col gap-4">
+                                <h4 className="text-3xl font-black text-white uppercase tracking-tight">Apps</h4>
+                                <div className="flex flex-col gap-5 mt-2">
+                                    <a
+                                        href="https://www.pedidosya.com.ar/restaurantes/bariloche/la-casa-de-la-hamburguesa-barrio-belgrano-d2ef7a33-8999-4a8c-9b72-e0b717b859d7-menu?__cf_chl_tk=Ge5vtr.Hjbo7WKCRZSIYzECFUt_BQa.MQT5.GxGr5eU-1772475064-1.0.1.1-DrTZXXE2v_5wbWnRVeR2jyAGK1iGyHqNlrmnUUs5ftY"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-4 group cursor-pointer w-fit"
+                                    >
+                                        <div className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center transition-all duration-300 shadow-xl overflow-hidden group-hover:border-[#ea044e]">
+                                            <img src={pedidosYaIco} alt="Pedidos Ya" className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                                        </div>
+                                        <div>
+                                            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-0.5">Tienda Online</p>
+                                            <p className="text-white text-base font-bold tracking-wide group-hover:text-[#ea044e] transition-colors">PedidosYa</p>
+                                        </div>
+                                    </a>
+
+                                    <a
+                                        href="https://www.rappi.com.ar/restaurantes/205276-la-casa-de-la-hamburguesa"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-4 group cursor-pointer w-fit"
+                                    >
+                                        <div className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center transition-all duration-300 shadow-xl overflow-hidden group-hover:border-[#ff441f]">
+                                            <img src={rappiIco} alt="Rappi" className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                                        </div>
+                                        <div>
+                                            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-0.5">Tienda Online</p>
+                                            <p className="text-white text-base font-bold tracking-wide group-hover:text-[#ff441f] transition-colors">Rappi</p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </motion.div>

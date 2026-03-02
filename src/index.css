@@ -12,6 +12,22 @@
   --font-display: 'Outfit', sans-serif;
 }
 
+@font-face {
+  font-family: 'Rockwell';
+  src: url('./assets/Fonts/Rockwell Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ventography';
+  src: url('./assets/Fonts/Ventography_Personal_Use_Only.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
 
   html,

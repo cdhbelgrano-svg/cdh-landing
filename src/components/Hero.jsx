@@ -52,7 +52,7 @@ const Hero = () => {
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="mb-8"
                 >
-                    <h2 className="text-xl md:text-2xl font-bold tracking-[0.3em] text-cdh-orange uppercase drop-shadow-[0_0_15px_rgba(242,101,19,0.3)]">Sucursal Belgrano</h2>
+                    <h2 className="text-3xl md:text-4xl font-normal tracking-wider text-cdh-orange drop-shadow-[0_0_15px_rgba(242,101,19,0.3)] capitalize" style={{ fontFamily: '"Rockwell", serif' }}>Sucursal Belgrano</h2>
                 </motion.div>
 
                 <motion.div
@@ -69,12 +69,13 @@ const Hero = () => {
                 </motion.div>
 
                 <motion.h3
-                    className="text-xl md:text-3xl font-bold tracking-[0.3em] text-cdh-orange uppercase mb-12 max-w-3xl drop-shadow-[0_0_15px_rgba(242,101,19,0.3)]"
+                    className="text-6xl md:text-[80px] leading-tight font-normal text-cdh-orange capitalize mb-12 max-w-4xl drop-shadow-[0_0_15px_rgba(242,101,19,0.3)]"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                    style={{ fontFamily: '"Ventography", cursive' }}
                 >
-                    Sabor Insuperable
+                    Sabor insuperable
                 </motion.h3>
 
                 <motion.div
