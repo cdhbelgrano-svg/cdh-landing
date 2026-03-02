@@ -77,7 +77,7 @@ const Refill = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        Tu vaso nunca está vacío. Servite las veces que quieras y acompaña tu smash con el mejor sabor.
+                        Tu vaso nunca estará vacío. Servite las veces que quieras y acompaña tu Hamburguesa con el mejor sabor.
                     </motion.p>
 
                     <motion.div

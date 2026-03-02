@@ -27,7 +27,7 @@ const MenuPreview = () => {
         },
         {
             name: "Hamburguesa Italiana",
-            desc: "Medallón premium, mozzarella hilada, tomates secos hidrolatados y pesto de albahaca fresca.",
+            desc: "Queso mozzarella, tomates confitados, aceitunas negras, rúcula y albahaca frescas.",
             price: "$19.400",
             img: italianaImg
         },
@@ -70,7 +70,7 @@ const MenuPreview = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.4, delay: i * 0.1 }}
-                            className="group bg-[#111] rounded-[1.75rem] overflow-hidden border border-white/5 hover:border-cdh-orange/30 transition-all duration-500 flex flex-col h-full shadow-lg will-change-transform"
+                            className="group bg-[#111] rounded-[1.75rem] overflow-hidden border border-white/5 hover:border-cdh-orange/30 transition-colors duration-500 flex flex-col h-full shadow-lg will-change-transform"
                         >
                             <div className="relative aspect-[4/5] overflow-hidden bg-black/40">
                                 <img

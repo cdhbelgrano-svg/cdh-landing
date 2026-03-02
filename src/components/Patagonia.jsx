@@ -100,11 +100,11 @@ const Patagonia = () => {
                             {varieties.map((beer, i) => (
                                 <motion.div
                                     key={beer.name}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                                    className="p-5 rounded-xl bg-[#000000]/20 border border-white/5 hover:border-[#D98452]/50 transition-all group"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
+                                    className="p-5 rounded-xl bg-[#000000]/20 border border-white/5 hover:border-[#D98452]/50 transition-colors group"
                                 >
                                     <div className="flex justify-between items-start mb-1">
                                         <h4 className={`text-xl font-black uppercase tracking-tight ${beer.color} flex items-center gap-2`}>

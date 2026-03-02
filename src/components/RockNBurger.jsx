@@ -118,7 +118,7 @@ const RockNBurger = () => {
                     href="https://instagram.com/cdhbelgrano"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 border border-white/10 hover:border-cdh-orange px-8 py-4 rounded-full text-white font-bold text-sm uppercase tracking-wider transition-all hover:bg-cdh-orange shadow-lg"
+                    className="inline-flex items-center gap-3 border border-white/10 hover:border-cdh-orange px-8 py-4 rounded-full text-white font-bold text-sm uppercase tracking-wider transition-colors hover:bg-cdh-orange shadow-lg"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

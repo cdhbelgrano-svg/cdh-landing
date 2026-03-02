@@ -172,7 +172,7 @@ const FAQ = () => {
                             <div>
                                 <h4 className="text-lg font-bold text-white mb-0.5 uppercase">Opciones Sin TACC</h4>
                                 <p className="text-gray-400 text-sm leading-relaxed">
-                                    Cualquiera de nuestras burgers con pan Sin TACC.
+                                    Podes pedir cualquiera de nuestras burgers con pan Sin TACC.
                                     <br />
                                     <span className="text-cdh-gold/80 italic text-[11px] block mt-1 leading-tight">
                                         * Al no contar con una cocina exclusiva, existe riesgo de contaminación cruzada.

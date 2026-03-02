@@ -47,9 +47,9 @@ const Hero = () => {
             <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-6xl mx-auto w-full">
 
                 <motion.div
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 1, ease: "easeOut" }}
                     className="mb-8"
                 >
                     <h2 className="text-xl md:text-2xl font-bold tracking-[0.3em] text-cdh-orange uppercase drop-shadow-[0_0_15px_rgba(242,101,19,0.3)]">Sucursal Belgrano</h2>
@@ -57,9 +57,9 @@ const Hero = () => {
 
                 <motion.div
                     className="flex flex-col items-center justify-center text-center space-y-0 text-white mb-8 drop-shadow-2xl"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    initial={{ opacity: 0, scale: 0.85, y: 40 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 >
                     <img
                         src={logoHero}
@@ -70,23 +70,23 @@ const Hero = () => {
 
                 <motion.h3
                     className="text-xl md:text-3xl font-bold tracking-[0.3em] text-cdh-orange uppercase mb-12 max-w-3xl drop-shadow-[0_0_15px_rgba(242,101,19,0.3)]"
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
                 >
                     Sabor Insuperable
                 </motion.h3>
 
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
+                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.4 }}
                 >
                     <motion.a
                         href="https://menu.fu.do/lacasadelahamburguesabelgrano"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative inline-flex items-center justify-center px-10 py-5 font-black text-white bg-cdh-orange overflow-hidden rounded-full shadow-[0_0_40px_-10px_rgba(242,101,19,0.6)] transition-all"
+                        className="group relative inline-flex items-center justify-center px-10 py-5 font-black text-white bg-cdh-orange overflow-hidden rounded-full shadow-[0_0_40px_-10px_rgba(242,101,19,0.6)] transition-colors"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >

@@ -12,6 +12,14 @@ const VIPForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        // Validación explícita de campos obligatorios
+        if (!formData.firstName.trim() || !formData.lastName.trim() || !formData.phoneLocal.trim()) {
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 3000);
+            return;
+        }
+
         setStatus('submitting');
 
         const formspreeEndpoint = "https://formspree.io/f/xlgwkgpd";
@@ -43,7 +51,14 @@ const VIPForm = () => {
                 // Redirigir a WhatsApp con el mensaje gatillo
                 const waPhone = "5492944161917"; // Número del local
                 const triggerWord = "CUPONWEB10"; // Palabra clave para la respuesta automática
-                const waMessage = `Hola! Soy ${formData.firstName} ${formData.lastName}. Dejé mis datos en la web y quiero mi regalito. Mi código es: ${triggerWord}`;
+
+                // Formato tipo "tarjeta de contacto" para facilitar el guardado
+                const waMessage = `Hola! Quiero mi 10% de descuento. 🍔👇
+                
+*NUEVO CONTACTO VIP:*
+👤 Nombre: ${formData.firstName} ${formData.lastName}
+🎟️ Código: ${triggerWord}`;
+
                 const encodedMessage = encodeURIComponent(waMessage);
 
                 setTimeout(() => {
@@ -96,7 +111,7 @@ const VIPForm = () => {
                                 name="firstName"
                                 value={formData.firstName}
                                 onChange={handleChange}
-                                placeholder="Nombre"
+                                placeholder="Nombre *"
                                 required
                                 className="w-full pl-12 pr-4 py-4 rounded-full bg-[#111] border border-cdh-darkwood text-white placeholder-gray-500 focus:outline-none focus:border-cdh-gold focus:ring-1 focus:ring-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]"
                             />
@@ -107,7 +122,7 @@ const VIPForm = () => {
                                 name="lastName"
                                 value={formData.lastName}
                                 onChange={handleChange}
-                                placeholder="Apellido"
+                                placeholder="Apellido *"
                                 required
                                 className="w-full px-6 py-4 rounded-full bg-[#111] border border-cdh-darkwood text-white placeholder-gray-500 focus:outline-none focus:border-cdh-gold focus:ring-1 focus:ring-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]"
                             />
@@ -137,7 +152,7 @@ const VIPForm = () => {
                                 name="phoneLocal"
                                 value={formData.phoneLocal}
                                 onChange={handleChange}
-                                placeholder="Tu número local"
+                                placeholder="Tu número *"
                                 pattern="[0-9]{8,15}"
                                 required
                                 className="w-full pl-12 pr-4 py-4 rounded-full bg-[#111] border border-cdh-darkwood text-white placeholder-gray-500 focus:outline-none focus:border-cdh-gold focus:ring-1 focus:ring-cdh-gold transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]"

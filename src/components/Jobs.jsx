@@ -84,8 +84,8 @@ const Jobs = () => {
                         Trabajá con <span className="text-cdh-orange">Nosotros</span>
                     </h2>
                     <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                        Buscamos talento con actitud, pasión por el buen servicio y ritmo para sumarse a la crew de CDH.<br /><br />
-                        Si creés que tenés lo necesario para ser parte de la mejor smash de la ciudad, dejanos tus datos y nos pondremos en contacto.
+                        Buscamos talento con actitud, pasión por el buen servicio y ritmo para sumarse al equipo de CDH.<br /><br />
+                        Buscamos mentes creativas, paladares exigentes y manos diestras en la cocina. Si compartís nuestra pasión por la perfección y querés formar parte de un equipo que desafía los límites del sabor, dejanos tus datos.
                     </p>
                 </motion.div>
 
