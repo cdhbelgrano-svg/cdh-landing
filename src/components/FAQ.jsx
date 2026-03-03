@@ -231,7 +231,7 @@ const FAQ = () => {
                                     </a>
 
                                     <a
-                                        href="https://www.rappi.com.ar/restaurantes/205276-la-casa-de-la-hamburguesa"
+                                        href="https://www.rappi.com.ar/restaurantes/delivery/64707-la-casa-de-la-hamburguesa?utm_source=app&utm_medium=deeplink&utm_campaign=share"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex items-center gap-4 group cursor-pointer w-fit"
