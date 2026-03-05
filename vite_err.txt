@@ -1,0 +1,8 @@
+[31m✗[39m Build failed in 809ms
+[31merror during build:
+[31mCould not resolve "../../assets/hero-bg.jpg" from "src/pages/CheckoutReturn.jsx"[31m
+file: [36mC:/Users/tatoe/Pagina CDH - Mas tienda/cdh-landing/src/pages/CheckoutReturn.jsx[31m
+    at getRollupError (file:///C:/Users/tatoe/Pagina%20CDH%20-%20Mas%20tienda/cdh-landing/node_modules/rollup/dist/es/shared/parseAst.js:402:41)
+    at error (file:///C:/Users/tatoe/Pagina%20CDH%20-%20Mas%20tienda/cdh-landing/node_modules/rollup/dist/es/shared/parseAst.js:398:42)
+    at ModuleLoader.handleInvalidResolvedId (file:///C:/Users/tatoe/Pagina%20CDH%20-%20Mas%20tienda/cdh-landing/node_modules/rollup/dist/es/shared/node-entry.js:21710:24)
+    at file:///C:/Users/tatoe/Pagina%20CDH%20-%20Mas%20tienda/cdh-landing/node_modules/rollup/dist/es/shared/node-entry.js:21670:26[39m

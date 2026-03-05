@@ -1,36 +1,44 @@
 import React from 'react'
-import Hero from './components/Hero'
-import MenuPreview from './components/MenuPreview'
-import Refill from './components/Refill'
-import Patagonia from './components/Patagonia'
-import RockNBurger from './components/RockNBurger'
-import Reviews from './components/Reviews'
-import VIPForm from './components/VIPForm'
-import Jobs from './components/Jobs'
-import FAQ from './components/FAQ'
-import WhatsAppButton from './components/WhatsAppButton'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Menu from './pages/Menu'
+import Checkout from './pages/Checkout'
+import CheckoutReturn from './pages/CheckoutReturn'
+
+// Admin Components
+import AdminLayout from './components/admin/AdminLayout'
+import Login from './pages/admin/Login'
+import Dashboard from './pages/admin/Dashboard'
+import PromosModule from './components/admin/PromosModule'
+import ClientesModule from './components/admin/ClientesModule'
+import EnviosModule from './components/admin/EnviosModule'
+import PaymentsModule from './components/admin/PaymentsModule'
+import StoreHoursModule from './components/admin/StoreHoursModule'
 
 function App() {
   return (
-    <main className="w-full min-h-screen bg-cdh-black overflow-x-hidden selection:bg-cdh-orange selection:text-white">
-      <Hero />
-      <MenuPreview />
-      <Refill />
-      <Patagonia />
-      <RockNBurger />
-      <Reviews />
-      <VIPForm />
-      <Jobs />
-      <FAQ />
-      <WhatsAppButton />
+    <BrowserRouter>
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout/:status" element={<CheckoutReturn />} />
 
-      <footer className="py-8 bg-cdh-black text-center border-t border-white/5">
-        <p className="text-gray-500 font-medium text-sm">
-          © {new Date().getFullYear()} La Casa de la Hamburguesa - Sucursal Belgrano.
-          <br className="md:hidden" /> Todos los derechos reservados.
-        </p>
-      </footer>
-    </main>
+        {/* Admin Public Routes */}
+        <Route path="/admin/login" element={<Login />} />
+
+        {/* Admin Private Routes */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="promos" element={<PromosModule />} />
+          <Route path="clientes" element={<ClientesModule />} />
+          <Route path="envios" element={<EnviosModule />} />
+          <Route path="pagos" element={<PaymentsModule />} />
+          <Route path="horarios" element={<StoreHoursModule />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

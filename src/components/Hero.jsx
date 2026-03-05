@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import heroBg from '../assets/hero-bg.jpg';
@@ -82,6 +83,7 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.8, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.4 }}
+                    className="flex flex-col sm:flex-row gap-4 items-center justify-center"
                 >
                     <motion.a
                         href="https://menu.fu.do/lacasadelahamburguesabelgrano"
@@ -97,6 +99,15 @@ const Hero = () => {
                             <ChevronRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" />
                         </span>
                     </motion.a>
+
+                    <Link
+                        to="/menu"
+                        className="group relative inline-flex items-center justify-center px-8 py-4 font-black text-cdh-orange bg-transparent border-2 border-cdh-orange overflow-hidden rounded-full transition-colors hover:bg-cdh-orange hover:text-white"
+                    >
+                        <span className="relative flex items-center gap-2 text-lg md:text-xl uppercase tracking-widest">
+                            Ver Menú (Test)
+                        </span>
+                    </Link>
                 </motion.div>
             </div>
 

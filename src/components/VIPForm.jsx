@@ -10,19 +10,31 @@ const VIPForm = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const [apiMessage, setApiMessage] = useState('');
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Validación explícita de campos obligatorios
         if (!formData.firstName.trim() || !formData.lastName.trim() || !formData.phoneLocal.trim() || !formData.email.trim()) {
+            setApiMessage('Por favor completá todos los campos.');
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 3000);
+            return;
+        }
+
+        // Validación para bloquear correos con "+" (anti-spam)
+        if (formData.email.includes('+')) {
+            setApiMessage('No usamos correos con "+". Ingresá tu mail principal.');
             setStatus('error');
             setTimeout(() => setStatus('idle'), 3000);
             return;
         }
 
         setStatus('submitting');
+        setApiMessage('');
 
-        const formspreeEndpoint = "https://formspree.io/f/xlgwkgpd";
+        const endpoint = "/api/vip-register";
 
         const localNumber = formData.phoneLocal.replace(/\D/g, '');
         let finalPhone = formData.phonePrefix + localNumber;
@@ -38,7 +50,7 @@ const VIPForm = () => {
         };
 
         try {
-            const response = await fetch(formspreeEndpoint, {
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -46,35 +58,30 @@ const VIPForm = () => {
                 body: JSON.stringify(payload)
             });
 
+            const result = await response.json();
+
             if (response.ok) {
                 setStatus('success');
+                setApiMessage(result.message || '¡Cupón enviado a tu email!');
 
-                // Redirigir a WhatsApp con el mensaje gatillo
-                const waPhone = "5492944161917"; // Número del local
-                const triggerWord = "CUPONWEB10"; // Palabra clave para la respuesta automática
-
-                // Formato tipo "tarjeta de contacto" para facilitar el guardado
-                const waMessage = `Hola! Quiero mi 10% de descuento. 🍔👇
-                
-*NUEVO CONTACTO VIP:*
-👤 Nombre: ${formData.firstName} ${formData.lastName}
-📧 Email: ${formData.email}
-🎟️ Código: ${triggerWord}`;
-
-                const encodedMessage = encodeURIComponent(waMessage);
+                // Opcional: Podés dejar el trigger a WhatsApp si querían recibirlo por ahí también.
+                // Pero según la lógica pedida, ahora se manda por email, así que podemos saltear el WA,
+                // o redirigirlo sólo para saludar.
 
                 setTimeout(() => {
-                    window.open(`https://wa.me/${waPhone}?text=${encodedMessage}`, '_blank');
                     setFormData({ firstName: '', lastName: '', phonePrefix: '+54', phoneLocal: '', email: '' });
-                    setStatus('idle');
-                }, 1500); // Pequeña pausa para que vean el "¡Cupón en camino!"
+                    // Regresamos a idle después de un rato largo para que lea el msj.
+                    setTimeout(() => setStatus('idle'), 4000);
+                }, 1500);
 
             } else {
+                setApiMessage(result.message || 'Hubo un problema. Intentá de nuevo.');
                 setStatus('error');
                 setTimeout(() => setStatus('idle'), 5000);
             }
         } catch (error) {
-            console.error(error);
+            console.error("Fetch error VIP form:", error);
+            setApiMessage('Hubo un error de red. Revisá tu conexión.');
             setStatus('error');
             setTimeout(() => setStatus('idle'), 5000);
         }
@@ -182,18 +189,21 @@ const VIPForm = () => {
                         className="group relative inline-flex items-center justify-center w-full px-8 py-4 mt-2 font-bold text-black bg-cdh-gold overflow-hidden rounded-full transition-all hover:scale-[1.02] disabled:opacity-80 disabled:hover:scale-100"
                     >
                         {status === 'submitting' && (
-                            <span className="flex items-center gap-2"><Loader2 className="w-5 h-5 animate-spin" /> Enviando...</span>
+                            <span className="flex items-center gap-2"><Loader2 className="w-5 h-5 animate-spin" /> Registrando...</span>
                         )}
                         {status === 'success' && (
-                            <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5" /> ¡Bienvenido a la familia!</span>
+                            <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5" /> {apiMessage || '¡Revisá tu mail!'}</span>
                         )}
                         {status === 'error' && (
-                            <span className="flex items-center gap-2 text-red-900">Hubo un error. Intenta de nuevo.</span>
+                            <span className="flex items-center gap-2 text-red-900">{apiMessage || 'Hubo un error'}</span>
                         )}
                         {status === 'idle' && (
                             <span className="relative flex items-center gap-2 uppercase tracking-wide">Quiero mi 10% OFF <MessageCircle className="w-5 h-5 group-hover:rotate-12 transition-transform" /></span>
                         )}
                     </button>
+                    {apiMessage && status === 'error' && (
+                        <p className="text-center text-red-400 text-xs mt-2 font-bold">{apiMessage}</p>
+                    )}
                 </motion.form>
 
                 <p className="text-xs text-gray-600 mt-6">* Prometemos no ser spammeros. Te enviamos el descuento (válido solo para pedidos por la web) y seguimos siendo amigos.</p>

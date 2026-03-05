@@ -1,0 +1,209 @@
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\FAQ.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u               no-unused-vars
+  52:11  error  'todayIndex' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\Hero.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\Jobs.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  63:18  error  'error' is defined but never used                                              no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\MenuPreview.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\Patagonia.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\Refill.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  no-unused-vars
+  25:28  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  23 |                 className="absolute bg-white/10 rounded-full"
+  24 |                 style={{
+> 25 |                     width: Math.random() * 8 + 2,
+     |                            ^^^^^^^^^^^^^ Cannot call impure function
+  26 |                     height: Math.random() * 8 + 2,
+  27 |                     left: `${Math.random() * 100}%`,
+  28 |                     bottom: `-20px`,  react-hooks/purity
+  26:29  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  24 |                 style={{
+  25 |                     width: Math.random() * 8 + 2,
+> 26 |                     height: Math.random() * 8 + 2,
+     |                             ^^^^^^^^^^^^^ Cannot call impure function
+  27 |                     left: `${Math.random() * 100}%`,
+  28 |                     bottom: `-20px`,
+  29 |                 }}                                            react-hooks/purity
+  27:30  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  25 |                     width: Math.random() * 8 + 2,
+  26 |                     height: Math.random() * 8 + 2,
+> 27 |                     left: `${Math.random() * 100}%`,
+     |                              ^^^^^^^^^^^^^ Cannot call impure function
+  28 |                     bottom: `-20px`,
+  29 |                 }}
+  30 |                 animate={{                                         react-hooks/purity
+  32:29  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  30 |                 animate={{
+  31 |                     y: [0, -1000],
+> 32 |                     x: [0, (Math.random() - 0.5) * 50],
+     |                             ^^^^^^^^^^^^^ Cannot call impure function
+  33 |                     opacity: [0, 0.4, 0],
+  34 |                     scale: [1, 1.5, 1],
+  35 |                 }}                                                            react-hooks/purity
+  37:35  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  35 |                 }}
+  36 |                 transition={{
+> 37 |                     duration: 5 + Math.random() * 10,
+     |                                   ^^^^^^^^^^^^^ Cannot call impure function
+  38 |                     repeat: Infinity,
+  39 |                     delay: Math.random() * 10,
+  40 |                     ease: "linear"                                                  react-hooks/purity
+  39:28  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  37 |                     duration: 5 + Math.random() * 10,
+  38 |                     repeat: Infinity,
+> 39 |                     delay: Math.random() * 10,
+     |                            ^^^^^^^^^^^^^ Cannot call impure function
+  40 |                     ease: "linear"
+  41 |                 }}
+  42 |             />                                                                        react-hooks/purity
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\Reviews.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\RockNBurger.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             no-unused-vars
+  23:20  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  21 |     ].map((img, i) => ({
+  22 |         ...img,
+> 23 |         likes: `${(Math.random() * 2 + 0.5).toFixed(1)}k`,
+     |                    ^^^^^^^^^^^^^ Cannot call impure function
+  24 |         comments: Math.floor(Math.random() * 100 + 20),
+  25 |         span: i === 0 ? 'md:col-span-2 md:row-span-2' : 'col-span-1 row-span-1',
+  26 |         displayClass: i === 5 ? 'block md:hidden' : 'block'  react-hooks/purity
+  24:30  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  22 |         ...img,
+  23 |         likes: `${(Math.random() * 2 + 0.5).toFixed(1)}k`,
+> 24 |         comments: Math.floor(Math.random() * 100 + 20),
+     |                              ^^^^^^^^^^^^^ Cannot call impure function
+  25 |         span: i === 0 ? 'md:col-span-2 md:row-span-2' : 'col-span-1 row-span-1',
+  26 |         displayClass: i === 5 ? 'block md:hidden' : 'block'
+  27 |     }));        react-hooks/purity
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\VIPForm.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\WhatsAppButton.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\admin\EnviosModule.jsx
+  38:9  error  Error: Cannot access variable before it is declared
+
+`loadSettings` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  36 |
+  37 |     useEffect(() => {
+> 38 |         loadSettings();
+     |         ^^^^^^^^^^^^ `loadSettings` accessed before it is declared
+  39 |     }, []);
+  40 |
+  41 |     const loadSettings = async () => {
+
+  39 |     }, []);
+  40 |
+> 41 |     const loadSettings = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |         setLoading(true);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |         const { data, error } = await supabase
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |         setLoading(false);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^
+> 63 |     };
+     | ^^^^^^^ `loadSettings` is declared here
+  64 |
+  65 |     const handlePlaceChanged = () => {
+  66 |         if (autocompleteRef.current !== null) {  react-hooks/immutability
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\admin\OrdersModule.jsx
+  37:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  35 |     // Load orders from Supabase and listen for real-time updates
+  36 |     useEffect(() => {
+> 37 |         loadOrders();
+     |         ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  38 |
+  39 |         const subscription = supabase
+  40 |             .channel('orders-changes')  react-hooks/set-state-in-effect
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\admin\PaymentsModule.jsx
+  17:27  error  'error' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\admin\PromosModule.jsx
+  104:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  102 |
+  103 |     useEffect(() => {
+> 104 |         loadPromosData();
+      |         ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  105 |
+  106 |         // Load Fudo Data
+  107 |         const loadFudoData = async () => {  react-hooks/set-state-in-effect
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\menu\CartDrawer.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\menu\ProductCard.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\menu\ProductModal.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\components\menu\PromoBanners.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\pages\Checkout.jsx
+  410:27  error  'customerName' is not defined   no-undef
+  411:28  error  'customerPhone' is not defined  no-undef
+
+C:\Users\tatoe\Pagina CDH - Mas tienda\cdh-landing\src\pages\Menu.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+✖ 31 problems (31 errors, 0 warnings)
+
